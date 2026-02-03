@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Operations Center</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="mission.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg">
+       <div class="container-fluid">
+          <a class="navbar-brand fw-bold fs-2" href="#"><i class="fa fa-fighter-jet fs-2" aria-hidden="true"></i> Gotham<span class="text-white"> Airforce</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item fw-bold">
+             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+           </li>
+           <li class="nav-item fw-bold">
+             <a class="nav-link" href="index.html">About</a>
+           </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">History</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="index.html">Command Structures</a></li>
+               <li><a class="dropdown-item" href="index.html">Core Values</a></li>
+             </ul>
+          </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Operations</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="fleet.html">Aircraft Fleets</a></li>
+               <li><a class="dropdown-item" href="mission.html">Missions</a></li>
+             </ul>
+          </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Careers</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="personnel.html">Officers</a></li>
+               <li><a class="dropdown-item" href="personnel.html">Enlisted</a></li>
+               <li><hr class="dropdown-divider"></li>
+               <li><a class="dropdown-item" href="personnel.html">Civilian</a></li>
+             </ul>
+          </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Media</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="news.html">News</a></li>
+               <li><a class="dropdown-item" href="news.html">Gallery</a></li>
+             </ul>
+          </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="navbtn bg-black text-white" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </div>
+ </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1><i class="bi bi-grid-3x3-gap-fill"></i> Mission Operations Center</h1>
+                    <p class="lead mb-0">Monitor and manage active missions from a centralized dashboard</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="d-none d-md-block">
+                        <span class="badge text-dark p-2">Status: <span class="text-success">Operational</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Mission Cards Section -->
+        <section>
+            <h2 class="mb-4">Mission Cards</h2>
+            <div class="row g-4">
+                <!-- Training Card -->
+                <div class="col-md-4">
+                    <div class="card mission-card training-card">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="bi bi-mortarboard-fill"></i>
+                            </div>
+                            <h4 class="card-title">Training</h4>
+                            <p class="card-text">Conduct personnel training exercises to maintain operational readiness and improve mission effectiveness.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-info">3 Active</span>
+                                <span class="text-muted">Next: May 15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Surveillance Card -->
+                <div class="col-md-4">
+                    <div class="card mission-card surveillance-card">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="bi bi-binoculars-fill"></i>
+                            </div>
+                            <h4 class="card-title">Surveillance</h4>
+                            <p class="card-text">Monitor designated areas for activity analysis and intelligence gathering using advanced sensor systems.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">5 Active</span>
+                                <span class="text-muted">24/7 Operation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Humanitarian Card -->
+                <div class="col-md-4">
+                    <div class="card mission-card humanitarian-card">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="bi bi-heart-fill"></i>
+                            </div>
+                            <h4 class="card-title">Humanitarian</h4>
+                            <p class="card-text">Provide disaster relief, medical assistance, and support to communities in crisis situations.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning">2 Active</span>
+                                <span class="text-muted">High Priority</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Progress Indicators and Map Section -->
+        <div class="row mt-4">
+            <!-- Progress Indicators -->
+            <div class="col-lg-6">
+                <div class="progress-container">
+                    <h3>Mission Status</h3>
+                    <p class="text-muted">Tracking mission progress through all phases</p>
+                    
+                    <div class="d-flex justify-content-between align-items-start mt-4">
+                        <!-- Planning -->
+                        <div class="progress-step planning">
+                            <div class="step-circle">
+                                <i class="bi bi-clipboard-check"></i>
+                            </div>
+                            <h6>Planning</h6>
+                            <small class="text-muted">Mission design & preparation</small>
+                            <span class="badge bg-secondary mt-2">4 Missions</span>
+                        </div>
+                        
+                        <div class="progress-connector completed"></div>
+                        
+                        <!-- Active -->
+                        <div class="progress-step active">
+                            <div class="step-circle">
+                                <i class="bi bi-play-circle"></i>
+                            </div>
+                            <h6>Active</h6>
+                            <small class="text-muted">Mission in execution</small>
+                            <span class="badge bg-success mt-2">10 Missions</span>
+                        </div>
+                        
+                        <div class="progress-connector active"></div>
+                        
+                        <!-- Completed -->
+                        <div class="progress-step completed">
+                            <div class="step-circle">
+                                <i class="bi bi-flag-fill"></i>
+                            </div>
+                            <h6>Completed</h6>
+                            <small class="text-muted">Mission finished</small>
+                            <span class="badge bg-primary mt-2">7 Missions</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Visualization -->
+                    <div class="mt-5">
+                        <h6 class="mb-3">Overall Mission Progress</h6>
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Planning 20%</div>
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Active 50%</div>
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">Completed 30%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interactive Map Placeholder -->
+            <div class="col-lg-6">
+                <div class="map-container">
+                    <h3>Mission Zones</h3>
+                    <p class="text-muted">Active mission zones highlighted on the map (UI only)</p>
+                    
+                    <div class="map-placeholder mt-3">
+                        <div class="map-grid"></div>
+                        
+                        <!-- Highlighted Zones -->
+                        <div class="zone zone-1">
+                            <div class="text-center">
+                                <i class="bi bi-mortarboard-fill d-block mb-1"></i>
+                                Zone Alpha<br>Training
+                            </div>
+                        </div>
+                        
+                        <div class="zone zone-2">
+                            <div class="text-center">
+                                <i class="bi bi-binoculars-fill d-block mb-1"></i>
+                                Zone Bravo<br>Surveillance
+                            </div>
+                        </div>
+                        
+                        <div class="zone zone-3">
+                            <div class="text-center">
+                                <i class="bi bi-heart-fill d-block mb-1"></i>
+                                Zone Charlie<br>Humanitarian
+                            </div>
+                        </div>
+                        
+                        <div class="zone zone-4">
+                            <div class="text-center">
+                                <i class="bi bi-binoculars-fill d-block mb-1"></i>
+                                Zone Delta<br>Surveillance
+                            </div>
+                        </div>
+                        
+                        <!-- Map Legend -->
+                        <div class="position-absolute bottom-0 start-0 m-3">
+                            <div class="bg-white p-2 rounded shadow-sm">
+                                <small class="d-block"><span class="badge bg-primary me-1">●</span> Training Zone</small>
+                                <small class="d-block"><span class="badge bg-success me-1">●</span> Surveillance Zone</small>
+                                <small class="d-block"><span class="badge bg-purple me-1">●</span> Humanitarian Zone</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3 text-center">
+                        <div class="col-4">
+                            <div class="p-2 border rounded">
+                                <small class="d-block text-muted">Active Zones</small>
+                                <h5 class="mb-0">4</h5>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-2 border rounded">
+                                <small class="d-block text-muted">Personnel</small>
+                                <h5 class="mb-0">142</h5>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-2 border rounded">
+                                <small class="d-block text-muted">Assets</small>
+                                <h5 class="mb-0">28</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mission Timeline View -->
+        <div class="timeline-container">
+            <h3>Mission Timeline</h3>
+            <p class="text-muted">Recent and upcoming mission events</p>
+            
+            <div class="timeline">
+                <!-- Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between">
+                            <h6>Operation Northern Watch</h6>
+                            <span class="badge bg-success">Active</span>
+                        </div>
+                        <p class="small mb-1">Surveillance mission in Zone Bravo</p>
+                        <p class="small text-muted mb-0"><i class="bi bi-calendar-event me-1"></i> Started: April 10, 2023 | Duration: 14 days</p>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between">
+                            <h6>Training Exercise Tiger</h6>
+                            <span class="badge bg-primary">Completed</span>
+                        </div>
+                        <p class="small mb-1">Advanced combat training in Zone Alpha</p>
+                        <p class="small text-muted mb-0"><i class="bi bi-calendar-event me-1"></i> Completed: April 5, 2023 | Duration: 7 days</p>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between">
+                            <h6>Humanitarian Aid Phoenix</h6>
+                            <span class="badge bg-success">Active</span>
+                        </div>
+                        <p class="small mb-1">Medical assistance in Zone Charlie</p>
+                        <p class="small text-muted mb-0"><i class="bi bi-calendar-event me-1"></i> Started: April 1, 2023 | Duration: 30 days</p>
+                    </div>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between">
+                            <h6>Operation Silent Sentinel</h6>
+                            <span class="badge bg-secondary">Planning</span>
+                        </div>
+                        <p class="small mb-1">Upcoming surveillance in Zone Delta</p>
+                        <p class="small text-muted mb-0"><i class="bi bi-calendar-event me-1"></i> Starts: May 1, 2023 | Duration: 21 days</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+      <!-- Footer -->
+    <footer class="advanced-footer">
+     <div class="container">
+         <div class="row">
+             <!-- Sitemap -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Sitemap</h4>
+                 <ul class="footer-links">
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Home</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> About Us</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Command Structure</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Core Values</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Aircraft Fleets</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Missions</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Careers</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> News & Gallery</a></li>
+                 </ul>
+             </div>
+
+             <!-- Emergency Contact -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Emergency Contact</h4>
+                 <div class="emergency-contact">
+                     <p class="mb-2"><strong>24/7 Operations Center</strong></p>
+                     <div class="contact-number">1-800-GOTHAM-AF</div>
+                     <p class="small mb-2">For immediate military assistance</p>
+                     <p class="small mb-0">Secure Line: ***-***-****</p>
+                 </div>
+                 <div class="emergency-contact mt-3">
+                     <p class="mb-2"><strong>Family Support</strong></p>
+                     <div class="contact-number">1-888-GAF-FMLY</div>
+                     <p class="small mb-0">Support services for families</p>
+                 </div>
+             </div>
+
+             <!-- Legal & Privacy -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Legal & Privacy</h4>
+                 <ul class="footer-links">
+                     <li><a href="#"><i class="bi bi-shield-check me-2"></i> Privacy Policy</a></li>
+                     <li><a href="#"><i class="bi bi-file-text me-2"></i> Terms of Service</a></li>
+                     <li><a href="#"><i class="bi bi-lock me-2"></i> Security Protocols</a></li>
+                     <li><a href="#"><i class="bi bi-eye me-2"></i> Accessibility</a></li>
+                     <li><a href="#"><i class="bi bi-flag me-2"></i> FOIA Requests</a></li>
+                     <li><a href="#"><i class="bi bi-briefcase me-2"></i> Procurement</a></li>
+                 </ul>
+             </div>
+
+             <!-- Social Media -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Connect With Us</h4>
+                 <p class="mb-3">Follow Gotham Airforce for updates, news, and insights into our operations.</p>
+                 
+                 <div class="social-icons">
+                     <a href="#" class="social-icon" title="Twitter">
+                         <i class="bi bi-twitter"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="Facebook">
+                         <i class="bi bi-facebook"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="Instagram">
+                         <i class="bi bi-instagram"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="YouTube">
+                         <i class="bi bi-youtube"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="LinkedIn">
+                         <i class="bi bi-linkedin"></i>
+                     </a>
+                 </div>
+
+                 <div class="mt-4">
+                     <p class="mb-2"><strong>Official Channels Only</strong></p>
+                     <p class="small">Verify official accounts through our verification portal</p>
+                     <a href="#" class="verify btn btn-outline-warning btn-sm">Verify Accounts</a>
+                 </div>
+             </div>
+         </div>
+ 
+         <!-- Copyright -->
+         <div class="copyright">
+             <div class="container">
+                 <div class="row align-items-center">
+                     <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+                         <p class="mb-0">&copy; 2024 Gotham Airforce. All rights reserved. | Official Government Website</p>
+                     </div>
+                     <div class="col-md-6 text-md-end text-center">
+                         <p class="mb-0">
+                             <a href="#" class="text-white text-decoration-none me-3">Site Map</a>
+                             <a href="#" class="text-white text-decoration-none me-3">Contact Webmaster</a>
+                             <a href="#" class="text-white text-decoration-none">Report Issue</a>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </footer>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

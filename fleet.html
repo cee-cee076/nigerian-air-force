@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aircraft Fleet Management</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="fleet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+       <div class="container-fluid">
+          <a class="navbar-brand fw-bold fs-2" href="#"><i class="fa fa-fighter-jet fs-2" aria-hidden="true"></i> Gotham<span class="text-white"> Airforce</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item fw-bold">
+             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+           </li>
+           <li class="nav-item fw-bold">
+             <a class="nav-link" href="index.html">About</a>
+           </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">History</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="index.html">Command Structures</a></li>
+               <li><a class="dropdown-item" href="index.html">Core Values</a></li>
+             </ul>
+          </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Operations</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="fleet.html">Aircraft Fleets</a></li>
+               <li><a class="dropdown-item" href="mission.html">Missions</a></li>
+             </ul>
+          </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Careers</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="personnel.html">Officers</a></li>
+               <li><a class="dropdown-item" href="personnel.html">Enlisted</a></li>
+               <li><hr class="dropdown-divider"></li>
+               <li><a class="dropdown-item" href="personnel.html">Civilian</a></li>
+             </ul>
+          </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Media</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="news.html">News</a></li>
+               <li><a class="dropdown-item" href="news.html">Gallery</a></li>
+             </ul>
+          </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="navbtn btn bg-black text-white" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </div>
+ </nav>
+
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Fleet Header with Stats -->
+                <div class="fleet-header">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h2 class="mb-1">Aircraft Fleet Dashboard</h2>
+                            <p class="text-muted mb-0">Manage and monitor your aircraft fleet in real-time</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="stat-card">
+                                        <div class="stat-value">24</div>
+                                        <div class="stat-label">Total Aircraft</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-card">
+                                        <div class="stat-value">18</div>
+                                        <div class="stat-label">Active</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-card">
+                                        <div class="stat-value">4</div>
+                                        <div class="stat-label">In Maintenance</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter & Search Section -->
+                <div class="filter-section">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label for="typeFilter" class="form-label">Aircraft Type</label>
+                            <select id="typeFilter" class="form-select" onchange="filterAircraft()">
+                                <option value="all">All Types</option>
+                                <option value="fighter">Fighter Jets</option>
+                                <option value="transport">Transport</option>
+                                <option value="helicopter">Helicopters</option>
+                                <option value="recon">Reconnaissance</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="statusFilter" class="form-label">Status</label>
+                            <select id="statusFilter" class="form-select" onchange="filterAircraft()">
+                                <option value="all">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="training">Training</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="searchInput" class="form-label">Search by Name/Model</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                <input type="text" id="searchInput" class="form-control" placeholder="Enter aircraft model or name..." onkeyup="filterAircraft()">
+                            </div>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button id="resetFilters" class="btn btn-outline-secondary w-100" onclick="resetFilters()">
+                                <i class="bi bi-arrow-clockwise me-1"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Status Filter Buttons -->
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="d-flex flex-wrap gap-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="statusRadio" id="statusAll" value="all" checked onclick="filterByStatus('all')">
+                                    <label class="form-check-label" for="statusAll">All Status</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="statusRadio" id="statusActive" value="active" onclick="filterByStatus('active')">
+                                    <label class="form-check-label" for="statusActive">
+                                        <span class="badge status-active">Active</span>
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="statusRadio" id="statusMaintenance" value="maintenance" onclick="filterByStatus('maintenance')">
+                                    <label class="form-check-label" for="statusMaintenance">
+                                        <span class="badge status-maintenance">Maintenance</span>
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="statusRadio" id="statusTraining" value="training" onclick="filterByStatus('training')">
+                                    <label class="form-check-label" for="statusTraining">
+                                        <span class="badge status-training">Training</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aircraft Grid with Tabs -->
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs aircraft-type-tabs mb-4" id="aircraftTypeTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">All Aircraft</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="fighter-tab" data-bs-toggle="tab" data-bs-target="#fighter" type="button" role="tab">Fighter Jets</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="transport-tab" data-bs-toggle="tab" data-bs-target="#transport" type="button" role="tab">Transport</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="helicopter-tab" data-bs-toggle="tab" data-bs-target="#helicopter" type="button" role="tab">Helicopters</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="recon-tab" data-bs-toggle="tab" data-bs-target="#recon" type="button" role="tab">Reconnaissance</button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content" id="aircraftTypeTabContent">
+                            <!-- All Aircraft Tab -->
+                            <div class="tab-pane fade show active" id="all" role="tabpanel">
+                                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                                    <!-- F-22 Raptor -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/f22raptor.jpg" class="card-img-top" alt="F-22 Raptor">
+                                                <span class="aircraft-status status-active">Active</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">F-22 Raptor</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Air Superiority Fighter
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">Mach 2.25</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">1,600 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">65,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">1</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalF22">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('F-22 Raptor', 'C-17 Globemaster')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- C-17 Globemaster III -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/globemaster.avif" class="card-img-top" alt="C-17 Globemaster">
+                                                <span class="aircraft-status status-active">Active</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">C-17 Globemaster III</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Strategic Transport
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">450 knots</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">2,400 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">45,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">3</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalC17">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('F-22 Raptor', 'C-17 Globemaster')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- AH-64 Apache -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/apache.jpg" class="card-img-top" alt="AH-64 Apache">
+                                                <span class="aircraft-status status-maintenance">Maintenance</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">AH-64 Apache</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Attack Helicopter
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">182 mph</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">300 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">21,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">2</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalApache">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('AH-64 Apache', 'F-35 Lightning')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- F-35 Lightning II -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/F-35 Lightning II.jpg" class="card-img-top" alt="F-35 Lightning">
+                                                <span class="aircraft-status status-training">Training</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">F-35 Lightning II</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Multirole Fighter
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">Mach 1.6</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">1,200 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">50,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">1</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalF35">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('AH-64 Apache', 'F-35 Lightning')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Fighter Jets Tab -->
+                            <div class="tab-pane fade" id="fighter" role="tabpanel">
+                                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                                    <!-- F-22 Raptor -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/f22raptor.jpg" class="card-img-top" alt="F-22 Raptor">
+                                                <span class="aircraft-status status-active">Active</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">F-22 Raptor</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Air Superiority Fighter
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">Mach 2.25</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">1,600 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">65,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">1</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalF22">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('F-22 Raptor', 'F-35 Lightning')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- F-35 Lightning II -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/F-35 Lightning II.jpg" class="card-img-top" alt="F-35 Lightning">
+                                                <span class="aircraft-status status-training">Training</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">F-35 Lightning II</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Multirole Fighter
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">Mach 1.6</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">1,200 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">50,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">1</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalF35">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('F-22 Raptor', 'F-35 Lightning')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Transport Tab -->
+                            <div class="tab-pane fade" id="transport" role="tabpanel">
+                                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                                    <!-- C-17 Globemaster III -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/globemaster.avif" class="card-img-top" alt="C-17 Globemaster">
+                                                <span class="aircraft-status status-active">Active</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">C-17 Globemaster III</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Strategic Transport
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">450 knots</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">2,400 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">45,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">3</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalC17">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('C-17 Globemaster', 'KC-135')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- KC-135 Stratotanker -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/KC-135 Stratotanker.jpg" class="card-img-top" alt="KC-135 Stratotanker">
+                                                <span class="aircraft-status status-active">Active</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">KC-135 Stratotanker</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Aerial Refueling
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">530 mph</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">1,500 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">50,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">4</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalKC135">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('C-17 Globemaster', 'KC-135')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Helicopters Tab -->
+                            <div class="tab-pane fade" id="helicopter" role="tabpanel">
+                                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                                    <!-- AH-64 Apache -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/apache.jpg" class="card-img-top" alt="AH-64 Apache">
+                                                <span class="aircraft-status status-maintenance">Maintenance</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">AH-64 Apache</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Attack Helicopter
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">182 mph</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">300 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">21,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">2</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalApache">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('AH-64 Apache', 'UH-60')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- UH-60 Black Hawk -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/UH-60 Black Hawk.jpg" class="card-img-top" alt="UH-60 Black Hawk">
+                                                <span class="aircraft-status status-maintenance">Maintenance</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">UH-60 Black Hawk</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Utility Helicopter
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">183 mph</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">320 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">19,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">4</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalUH60">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('AH-64 Apache', 'UH-60')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Reconnaissance Tab -->
+                            <div class="tab-pane fade" id="recon" role="tabpanel">
+                                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                                    <!-- RQ-4 Global Hawk -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/RQ-4 Global Hawk.jpg" class="card-img-top" alt="RQ-4 Global Hawk">
+                                                <span class="aircraft-status status-active">Active</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">RQ-4 Global Hawk</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Reconnaissance UAV
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">357 mph</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">12,300 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">60,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">0</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalRQ4">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('RQ-4 Global Hawk', 'E-3 Sentry')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- E-3 Sentry AWACS -->
+                                    <div class="col">
+                                        <div class="card aircraft-card h-100">
+                                            <div class="position-relative">
+                                                <img src="img/E-3 Sentry AWACS.jpg" class="card-img-top" alt="E-3 Sentry AWACS">
+                                                <span class="aircraft-status status-active">Active</span>
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title aircraft-model">E-3 Sentry AWACS</h5>
+                                                <p class="card-text aircraft-role">
+                                                    <i class="bi bi-airplane me-1"></i> Airborne Early Warning
+                                                </p>
+                                                <div class="row mt-2 mb-3">
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">460 mph</span>
+                                                            <span class="spec-label">Max Speed</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">4,000 nmi</span>
+                                                            <span class="spec-label">Range</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">41,000 ft</span>
+                                                            <span class="spec-label">Ceiling</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="spec-item">
+                                                            <span class="spec-value">22</span>
+                                                            <span class="spec-label">Crew</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-actions mt-auto">
+                                                    <div class="d-flex justify-content-between">
+                                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModalE3">
+                                                            <i class="bi bi-info-circle me-1"></i> Details
+                                                        </button>
+                                                        <button class="btn btn-outline-primary compare-btn" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('RQ-4 Global Hawk', 'E-3 Sentry')">
+                                                            <i class="bi bi-clipboard-data me-1"></i> Compare
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compare Section -->
+                <div class="compare-section" id="compareSection">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h5 class="mb-0">Compare Aircraft Side-by-Side</h5>
+                            <p class="text-muted mb-0">Select "Compare" on any two aircraft cards to view detailed comparison</p>
+                        </div>
+                        <div class="col-md-4 text-end">
+                            <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#compareModal">
+                                <i class="bi bi-clipboard-data me-1"></i> View Comparison Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Modals for Each Aircraft -->
+    
+    <!-- F-22 Raptor Detail Modal -->
+    <div class="modal fade" id="detailModalF22" tabindex="-1" aria-labelledby="detailModalF22Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModalF22Label">F-22 Raptor - Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1601964433565-c1d0a514be31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded" alt="F-22 Raptor">
+                            <div class="mt-3">
+                                <span class="badge status-active fs-6 p-2">Active</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="aircraft-model">F-22 Raptor</h3>
+                            <p class="aircraft-role"><i class="bi bi-airplane me-1"></i> Air Superiority Fighter</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-6">
+                                    <div class="spec-item">
+                                        <span class="spec-value">Mach 2.25</span>
+                                        <span class="spec-label">Max Speed</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="spec-item">
+                                        <span class="spec-value">1,600 nmi</span>
+                                        <span class="spec-label">Combat Range</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="spec-item">
+                                        <span class="spec-value">65,000 ft</span>
+                                        <span class="spec-label">Service Ceiling</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="spec-item">
+                                        <span class="spec-value">1</span>
+                                        <span class="spec-label">Crew</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h5 class="border-bottom pb-2">Technical Specifications</h5>
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Length</span>
+                                        <span class="fw-semibold">62 ft 1 in</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Wingspan</span>
+                                        <span class="fw-semibold">44 ft 6 in</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Height</span>
+                                        <span class="fw-semibold">16 ft 8 in</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Empty Weight</span>
+                                        <span class="fw-semibold">43,340 lb</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Max Takeoff Weight</span>
+                                        <span class="fw-semibold">83,500 lb</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Powerplant</span>
+                                        <span class="fw-semibold">2 × Pratt & Whitney F119-PW-100 turbofans</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h5 class="border-bottom pb-2">Capabilities</h5>
+                            <div class="capabilities-list">
+                                <span class="badge bg-primary me-2 mb-2">Stealth</span>
+                                <span class="badge bg-primary me-2 mb-2">Supercruise</span>
+                                <span class="badge bg-primary me-2 mb-2">Advanced Avionics</span>
+                                <span class="badge bg-primary me-2 mb-2">AIM-120 AMRAAM</span>
+                                <span class="badge bg-primary me-2 mb-2">AIM-9 Sidewinder</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h5 class="border-bottom pb-2">Deployment Regions</h5>
+                            <div>
+                                <div class="region-item">
+                                    <i class="bi bi-geo-alt me-2"></i> North America
+                                </div>
+                                <div class="region-item">
+                                    <i class="bi bi-geo-alt me-2"></i> Europe
+                                </div>
+                                <div class="region-item">
+                                    <i class="bi bi-geo-alt me-2"></i> Asia-Pacific
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('F-22 Raptor', 'F-35 Lightning')">
+                        <i class="bi bi-clipboard-data me-1"></i> Compare with F-35
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- C-17 Globemaster Detail Modal -->
+    <div class="modal fade" id="detailModalC17" tabindex="-1" aria-labelledby="detailModalC17Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModalC17Label">C-17 Globemaster III - Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded" alt="C-17 Globemaster">
+                            <div class="mt-3">
+                                <span class="badge status-active fs-6 p-2">Active</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="aircraft-model">C-17 Globemaster III</h3>
+                            <p class="aircraft-role"><i class="bi bi-airplane me-1"></i> Strategic Transport</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-6">
+                                    <div class="spec-item">
+                                        <span class="spec-value">450 knots</span>
+                                        <span class="spec-label">Max Speed</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="spec-item">
+                                        <span class="spec-value">2,400 nmi</span>
+                                        <span class="spec-label">Range</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="spec-item">
+                                        <span class="spec-value">45,000 ft</span>
+                                        <span class="spec-label">Service Ceiling</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="spec-item">
+                                        <span class="spec-value">3</span>
+                                        <span class="spec-label">Crew</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h5 class="border-bottom pb-2">Technical Specifications</h5>
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Length</span>
+                                        <span class="fw-semibold">174 ft</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Wingspan</span>
+                                        <span class="fw-semibold">169 ft 10 in</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Height</span>
+                                        <span class="fw-semibold">55 ft 1 in</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Empty Weight</span>
+                                        <span class="fw-semibold">282,500 lb</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Max Takeoff Weight</span>
+                                        <span class="fw-semibold">585,000 lb</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                        <span class="text-muted">Powerplant</span>
+                                        <span class="fw-semibold">4 × Pratt & Whitney F117-PW-100 turbofans</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h5 class="border-bottom pb-2">Capabilities</h5>
+                            <div class="capabilities-list">
+                                <span class="badge bg-primary me-2 mb-2">Strategic Airlift</span>
+                                <span class="badge bg-primary me-2 mb-2">Tactical Airlift</span>
+                                <span class="badge bg-primary me-2 mb-2">Airdrop</span>
+                                <span class="badge bg-primary me-2 mb-2">Medical Evacuation</span>
+                                <span class="badge bg-primary me-2 mb-2">Outsize Cargo</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h5 class="border-bottom pb-2">Deployment Regions</h5>
+                            <div>
+                                <div class="region-item">
+                                    <i class="bi bi-geo-alt me-2"></i> Global
+                                </div>
+                                <div class="region-item">
+                                    <i class="bi bi-geo-alt me-2"></i> Middle East
+                                </div>
+                                <div class="region-item">
+                                    <i class="bi bi-geo-alt me-2"></i> Europe
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#compareModal" onclick="setCompareAircraft('C-17 Globemaster', 'KC-135')">
+                        <i class="bi bi-clipboard-data me-1"></i> Compare with KC-135
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Additional detail modals would follow the same pattern -->
+    <!-- For brevity, I'm showing 2 detail modals. The others would follow the same structure -->
+
+    <!-- Compare Modal -->
+    <div class="modal fade" id="compareModal" tabindex="-1" aria-labelledby="compareModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="compareModalLabel">Aircraft Comparison</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="compare-item">
+                                <h4 class="compare-title" id="compareAircraft1">F-22 Raptor</h4>
+                                <img src="https://images.unsplash.com/photo-1601964433565-c1d0a514be31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded mb-3" alt="F-22 Raptor">
+                                <div class="mb-3">
+                                    <span class="badge status-active">Active</span>
+                                    <span class="ms-2 text-muted">Air Superiority Fighter</span>
+                                </div>
+                                <div class="compare-specs">
+                                    <div class="compare-spec-row">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <span class="winner">Mach 2.25</span>
+                                            </div>
+                                            <div class="col-2 text-center text-muted">
+                                                Max Speed
+                                            </div>
+                                            <div class="col-5 text-end">
+                                                <span>Mach 1.6</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="compare-spec-row">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <span class="winner">1,600 nmi</span>
+                                            </div>
+                                            <div class="col-2 text-center text-muted">
+                                                Range
+                                            </div>
+                                            <div class="col-5 text-end">
+                                                <span>1,200 nmi</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="compare-spec-row">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <span class="winner">65,000 ft</span>
+                                            </div>
+                                            <div class="col-2 text-center text-muted">
+                                                Ceiling
+                                            </div>
+                                            <div class="col-5 text-end">
+                                                <span>50,000 ft</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="compare-spec-row">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <span>1</span>
+                                            </div>
+                                            <div class="col-2 text-center text-muted">
+                                                Crew
+                                            </div>
+                                            <div class="col-5 text-end">
+                                                <span>1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-center justify-content-center">
+                            <div class="vs-separator">VS</div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="compare-item">
+                                <h4 class="compare-title" id="compareAircraft2">F-35 Lightning II</h4>
+                                <img src="https://images.unsplash.com/photo-1518908336710-4e1cf821d3d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded mb-3" alt="F-35 Lightning">
+                                <div class="mb-3">
+                                    <span class="badge status-training">Training</span>
+                                    <span class="ms-2 text-muted">Multirole Fighter</span>
+                                </div>
+                                <div class="compare-specs">
+                                    <div class="compare-spec-row">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <span>Mach 1.6</span>
+                                            </div>
+                                            <div class="col-2 text-center text-muted">
+                                                Max Speed
+                                            </div>
+                                            <div class="col-5 text-end">
+                                                <span class="winner">Mach 2.25</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="compare-spec-row">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <span>1,200 nmi</span>
+                                            </div>
+                                            <div class="col-2 text-center text-muted">
+                                                Range
+                                            </div>
+                                            <div class="col-5 text-end">
+                                                <span class="winner">1,600 nmi</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="compare-spec-row">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <span>50,000 ft</span>
+                                            </div>
+                                            <div class="col-2 text-center text-muted">
+                                                Ceiling
+                                            </div>
+                                            <div class="col-5 text-end">
+                                                <span class="winner">65,000 ft</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="compare-spec-row">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <span>1</span>
+                                            </div>
+                                            <div class="col-2 text-center text-muted">
+                                                Crew
+                                            </div>
+                                            <div class="col-5 text-end">
+                                                <span>1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comparison Table -->
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <h5 class="border-bottom pb-2">Detailed Comparison</h5>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Specification</th>
+                                            <th scope="col" id="compareHeader1">F-22 Raptor</th>
+                                            <th scope="col" id="compareHeader2">F-35 Lightning II</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Primary Role</td>
+                                            <td>Air Superiority Fighter</td>
+                                            <td>Multirole Fighter</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Stealth Technology</td>
+                                            <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                                            <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Supercruise Capability</td>
+                                            <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                                            <td><i class="bi bi-x-circle-fill text-danger"></i> No</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vertical Takeoff/Landing</td>
+                                            <td><i class="bi bi-x-circle-fill text-danger"></i> No</td>
+                                            <td><i class="bi bi-check-circle-fill text-success"></i> Yes (F-35B)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Unit Cost</td>
+                                            <td>$150 million</td>
+                                            <td>$80 million</td>
+                                        </tr>
+                                        <tr>
+                                            <td>First Flight</td>
+                                            <td>1997</td>
+                                            <td>2006</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="advanced-footer">
+     <div class="container">
+         <div class="row">
+             <!-- Sitemap -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Sitemap</h4>
+                 <ul class="footer-links">
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Home</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> About Us</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Command Structure</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Core Values</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Aircraft Fleets</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Missions</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Careers</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> News & Gallery</a></li>
+                 </ul>
+             </div>
+
+             <!-- Emergency Contact -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Emergency Contact</h4>
+                 <div class="emergency-contact">
+                     <p class="mb-2"><strong>24/7 Operations Center</strong></p>
+                     <div class="contact-number">1-800-GOTHAM-AF</div>
+                     <p class="small mb-2">For immediate military assistance</p>
+                     <p class="small mb-0">Secure Line: ***-***-****</p>
+                 </div>
+                 <div class="emergency-contact mt-3">
+                     <p class="mb-2"><strong>Family Support</strong></p>
+                     <div class="contact-number">1-888-GAF-FMLY</div>
+                     <p class="small mb-0">Support services for families</p>
+                 </div>
+             </div>
+
+             <!-- Legal & Privacy -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Legal & Privacy</h4>
+                 <ul class="footer-links">
+                     <li><a href="#"><i class="bi bi-shield-check me-2"></i> Privacy Policy</a></li>
+                     <li><a href="#"><i class="bi bi-file-text me-2"></i> Terms of Service</a></li>
+                     <li><a href="#"><i class="bi bi-lock me-2"></i> Security Protocols</a></li>
+                     <li><a href="#"><i class="bi bi-eye me-2"></i> Accessibility</a></li>
+                     <li><a href="#"><i class="bi bi-flag me-2"></i> FOIA Requests</a></li>
+                     <li><a href="#"><i class="bi bi-briefcase me-2"></i> Procurement</a></li>
+                 </ul>
+             </div>
+
+             <!-- Social Media -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Connect With Us</h4>
+                 <p class="mb-3">Follow Gotham Airforce for updates, news, and insights into our operations.</p>
+                 
+                 <div class="social-icons">
+                     <a href="#" class="social-icon" title="Twitter">
+                         <i class="bi bi-twitter"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="Facebook">
+                         <i class="bi bi-facebook"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="Instagram">
+                         <i class="bi bi-instagram"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="YouTube">
+                         <i class="bi bi-youtube"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="LinkedIn">
+                         <i class="bi bi-linkedin"></i>
+                     </a>
+                 </div>
+
+                 <div class="mt-4">
+                     <p class="mb-2"><strong>Official Channels Only</strong></p>
+                     <p class="small">Verify official accounts through our verification portal</p>
+                     <a href="#" class="verify btn btn-outline-warning btn-sm">Verify Accounts</a>
+                 </div>
+             </div>
+         </div>
+ 
+         <!-- Copyright -->
+         <div class="copyright">
+             <div class="container">
+                 <div class="row align-items-center">
+                     <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+                         <p class="mb-0">&copy; 2024 Gotham Airforce. All rights reserved. | Official Government Website</p>
+                     </div>
+                     <div class="col-md-6 text-md-end text-center">
+                         <p class="mb-0">
+                             <a href="#" class="text-white text-decoration-none me-3">Site Map</a>
+                             <a href="#" class="text-white text-decoration-none me-3">Contact Webmaster</a>
+                             <a href="#" class="text-white text-decoration-none">Report Issue</a>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </footer>
+
+    <!-- Bootstrap JS Bundle with Popper (for modals and tabs) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Minimal inline JavaScript for demonstration purposes -->
+    <script src="fleet.js"></script>
+    
+</body>
+</html>

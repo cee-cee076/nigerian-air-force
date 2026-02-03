@@ -1,0 +1,361 @@
+.navbar{
+    padding: 30px;
+    background-color: rgb(10, 63, 150);
+}
+
+.btn{
+    width: 70px;
+    border-radius: 18px;
+}
+
+.form-control{
+    border-radius: 18px;
+}
+
+.collapse{
+    margin-left: 350px;
+}
+
+.collapse li{
+    padding-right: 20px;
+}
+
+:root {
+    --primary-blue: #0d47a1;
+    --dark-blue: #002171;
+    --light-blue: #5472d3;
+    --accent-gold: #ffb300;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* Hero Slider */
+.hero-slider {
+    height: 75vh;
+    min-height: 600px;
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* border-radius: 0 0 20px 20px; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item {
+    height: 75vh;
+    min-height: 600px;
+}
+
+.carouselbtn{
+    width: 270px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-caption {
+    background: rgba(0, 33, 113, 0.85);
+    padding: 2rem;
+    border-radius: 10px;
+    bottom: 20%;
+    left: 10%;
+    right: 10%;
+    text-align: left;
+    width: 650px;
+    margin-left: 440px;
+}
+
+.carousel-indicators button {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50%;
+    margin: 0 8px !important;
+}
+
+/* Statistics Section */
+.stats-section {
+    background: linear-gradient(to right, var(--dark-blue), var(--primary-blue));
+    color: white;
+    padding: 3rem 0;
+    margin-top: -5px;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 100px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Announcement Ticker */
+.ticker-container {
+    background-color: #111;
+    color: white;
+    padding: 0.8rem 0;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 3px solid var(--accent-gold);
+}
+
+.ticker-title {
+    background-color: var(--accent-gold);
+    color: var(--dark-blue);
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-content {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: ticker 40s linear infinite;
+}
+
+.ticker-content:hover {
+    animation-play-state: paused;
+}
+
+.announcement-item {
+    display: inline-block;
+    padding: 0 3rem;
+    font-size: 1.1rem;
+}
+
+.announcement-date {
+    color: var(--accent-gold);
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+/* Command Structure Section */
+.command-section{
+    margin-bottom: 100px;
+}
+
+.command-title{
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(10, 63, 150);
+}
+
+.command-card, .values-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.command-card:hover, .values-card:hover {
+    transform: translateY(-10px);
+}
+
+.command-img, .values-img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.hierarchy-list {
+    list-style: none;
+    padding: 0;
+}
+
+.hierarchy-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hierarchy-list li:last-child {
+    border-bottom: none;
+}
+
+.rank {
+    background-color: gold;
+    color: rgb(10, 63, 150);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Core Values Section */
+.values-list {
+    list-style: none;
+    padding: 0;
+}
+
+.section-title{
+    color: rgb(10, 63, 150);
+    margin-bottom: 50px;
+}
+
+.values-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.values-list li:last-child {
+    border-bottom: none;
+}
+
+.value-icon {
+    background-color: rgb(10, 63, 150);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+/* Advanced Footer */
+.advanced-footer {
+    background-color: rgb(10, 63, 150);
+    color: white;
+    padding: 3rem 0 0;
+    margin-top: 4rem;
+}
+
+.footer-section {
+    margin-bottom: 2rem;
+}
+
+.footer-title {
+    color: gold;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: gold;
+}
+
+.emergency-contact {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid var(--gotham-gold);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.contact-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: gold;
+    margin: 0.5rem 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a i{
+    color: gold;
+}
+
+.verify{
+    width: 150px;
+}
+
+/* Animations */
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease-out;
+}
+
+ @media (max-width: 768px) {
+    .collapse{
+        margin-left: 0px;
+    }
+ }

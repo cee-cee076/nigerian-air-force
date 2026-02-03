@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Force Personnel & Rank Structure</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="personnel.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+       <div class="container-fluid">
+          <a class="navbar-brand fw-bold fs-2" href="#"><i class="fa fa-fighter-jet fs-2" aria-hidden="true"></i> Gotham<span class="text-white"> Airforce</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item fw-bold">
+             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+           </li>
+           <li class="nav-item fw-bold">
+             <a class="nav-link" href="index.html">About</a>
+           </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">History</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="index.html">Command Structures</a></li>
+               <li><a class="dropdown-item" href="index.html">Core Values</a></li>
+             </ul>
+          </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Operations</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="fleet.html">Aircraft Fleets</a></li>
+               <li><a class="dropdown-item" href="mission.html">Missions</a></li>
+             </ul>
+          </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Careers</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="personnel.html">Officers</a></li>
+               <li><a class="dropdown-item" href="personnel.html">Enlisted</a></li>
+               <li><hr class="dropdown-divider"></li>
+               <li><a class="dropdown-item" href="personnel.html">Civilian</a></li>
+             </ul>
+          </li>
+           <li class="nav-item dropdown fw-bold">
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Media</a>
+              <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="news.html">News</a></li>
+               <li><a class="dropdown-item" href="news.html">Gallery</a></li>
+             </ul>
+          </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn bg-black text-white" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </div>
+ </nav>
+
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center text-md-start">
+                    <div class="airforce-logo">
+                        <i class="fas fa-jet-fighter fa-3x"></i>
+                    </div>
+                </div>
+                <div class="col-md-8 text-center">
+                    <h1><i class="fas fa-star"></i> GOTHAM AIR FORCE</h1>
+                    <p>Personnel & Rank Structure System</p>
+                    <div class="mt-2">
+                        <span class="badge bg-warning text-dark">Aim High · Fly-Fight-Win</span>
+                    </div>
+                </div>
+                <div class="col-md-2 text-center text-md-end">
+                    <div class="d-inline-block p-3 rounded" style="background-color: rgba(255,255,255,0.1);">
+                        <p class="mb-1"><strong>Active Personnel:</strong> 328</p>
+                        <p class="mb-0"><strong>Status:</strong> <span class="text-success">ACTIVE</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <!-- Mission Statement -->
+        <div class="mission-statement">
+            <div class="row">
+                <div class="col-md-10">
+                    <h4><i class="fas fa-bullseye"></i> Mission Statement</h4>
+                    <p class="mb-0">"To fly, fight, and win...airpower anytime, anywhere." The Gotham Air Force's mission is to provide sovereign options for the defense of the Gotham and its global interests. This personnel system maintains records of all active duty Air Force members supporting this mission.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="row text-center">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">328</div>
+                        <div class="stat-label">Active Personnel</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">42</div>
+                        <div class="stat-label">Commissioned Officers</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">89</div>
+                        <div class="stat-label">Non-Commissioned Officers</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">197</div>
+                        <div class="stat-label">Enlisted Airmen</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rank Hierarchy Section -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-flag"></i> Air Force Rank Hierarchy</h2>
+            <div class="rank-hierarchy">
+                <!-- Officer Ranks -->
+                <div class="rank-level">
+                    <div class="rank-item officer">
+                        <div class="rank-insignia"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="rank-grade">O-10</div>
+                        <div class="rank-name">General</div>
+                    </div>
+                </div>
+                
+                <div class="hierarchy-connector">
+                    <div class="connector-line"></div>
+                </div>
+                
+                <div class="rank-level">
+                    <div class="rank-item officer">
+                        <div class="rank-insignia"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="rank-grade">O-9</div>
+                        <div class="rank-name">Lieutenant General</div>
+                    </div>
+                    <div class="rank-item officer">
+                        <div class="rank-insignia"><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="rank-grade">O-8</div>
+                        <div class="rank-name">Major General</div>
+                    </div>
+                </div>
+                
+                <div class="hierarchy-connector">
+                    <div class="connector-line"></div>
+                </div>
+                
+                <div class="rank-level">
+                    <div class="rank-item officer">
+                        <div class="rank-insignia"><i class="fas fa-star"></i></div>
+                        <div class="rank-grade">O-7</div>
+                        <div class="rank-name">Brigadier General</div>
+                    </div>
+                    <div class="rank-item officer">
+                        <div class="rank-insignia"><i class="fas fa-eagle"></i></div>
+                        <div class="rank-grade">O-6</div>
+                        <div class="rank-name">Colonel</div>
+                    </div>
+                    <div class="rank-item officer">
+                        <div class="rank-insignia"><i class="fas fa-feather"></i></div>
+                        <div class="rank-grade">O-5</div>
+                        <div class="rank-name">Lieutenant Colonel</div>
+                    </div>
+                </div>
+                
+                <div class="hierarchy-connector">
+                    <div class="connector-line"></div>
+                </div>
+                
+                <!-- NCO Ranks -->
+                <div class="rank-level">
+                    <div class="rank-item nco">
+                        <div class="rank-insignia"><i class="fas fa-chevrons-up"></i></div>
+                        <div class="rank-grade">E-9</div>
+                        <div class="rank-name">Chief Master Sergeant</div>
+                    </div>
+                    <div class="rank-item nco">
+                        <div class="rank-insignia"><i class="fas fa-chevron-up"></i><i class="fas fa-chevron-up"></i></div>
+                        <div class="rank-grade">E-8</div>
+                        <div class="rank-name">Senior Master Sergeant</div>
+                    </div>
+                    <div class="rank-item nco">
+                        <div class="rank-insignia"><i class="fas fa-chevron-up"></i></div>
+                        <div class="rank-grade">E-7</div>
+                        <div class="rank-name">Master Sergeant</div>
+                    </div>
+                </div>
+                
+                <div class="hierarchy-connector">
+                    <div class="connector-line"></div>
+                </div>
+                
+                <!-- Enlisted Ranks -->
+                <div class="rank-level">
+                    <div class="rank-item enlisted">
+                        <div class="rank-insignia"><i class="fas fa-bars"></i><i class="fas fa-bars"></i><i class="fas fa-bars"></i></div>
+                        <div class="rank-grade">E-6</div>
+                        <div class="rank-name">Technical Sergeant</div>
+                    </div>
+                    <div class="rank-item enlisted">
+                        <div class="rank-insignia"><i class="fas fa-bars"></i><i class="fas fa-bars"></i></div>
+                        <div class="rank-grade">E-5</div>
+                        <div class="rank-name">Staff Sergeant</div>
+                    </div>
+                    <div class="rank-item enlisted">
+                        <div class="rank-insignia"><i class="fas fa-bars"></i></div>
+                        <div class="rank-grade">E-4</div>
+                        <div class="rank-name">Senior Airman</div>
+                    </div>
+                    <div class="rank-item enlisted">
+                        <div class="rank-insignia"><i class="fas fa-circle"></i></div>
+                        <div class="rank-grade">E-3</div>
+                        <div class="rank-name">Airman First Class</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <h2 class="section-title"><i class="fas fa-filter"></i> Filter Personnel</h2>
+            
+            <!-- Hidden radio buttons for filtering -->
+            <input type="radio" id="show-all" name="rank-filter" class="filter-control" checked>
+            <input type="radio" id="filter-officer" name="rank-filter" class="filter-control">
+            <input type="radio" id="filter-nco" name="rank-filter" class="filter-control">
+            <input type="radio" id="filter-enlisted" name="rank-filter" class="filter-control">
+            
+            <input type="radio" id="filter-pilot" name="specialty-filter" class="filter-control">
+            <input type="radio" id="filter-support" name="specialty-filter" class="filter-control">
+            <input type="radio" id="filter-intel" name="specialty-filter" class="filter-control">
+            <input type="radio" id="filter-maintenance" name="specialty-filter" class="filter-control">
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h5 class="filter-title"><i class="fas fa-user-tie"></i> Filter by Rank</h5>
+                    <div class="d-flex flex-wrap mb-3">
+                        <label for="show-all" class="filter-btn active">All Ranks</label>
+                        <label for="filter-officer" class="filter-btn">Commissioned Officers</label>
+                        <label for="filter-nco" class="filter-btn">Non-Commissioned Officers</label>
+                        <label for="filter-enlisted" class="filter-btn">Enlisted Airmen</label>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <h5 class="filter-title"><i class="fas fa-cogs"></i> Filter by Specialty</h5>
+                    <div class="d-flex flex-wrap">
+                        <label for="show-all" class="filter-btn active">All Specialties</label>
+                        <label for="filter-pilot" class="filter-btn">Pilots & Aircrew</label>
+                        <label for="filter-support" class="filter-btn">Support & Operations</label>
+                        <label for="filter-intel" class="filter-btn">Intelligence</label>
+                        <label for="filter-maintenance" class="filter-btn">Maintenance</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personnel Cards Section -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-users"></i> Air Force Personnel Roster</h2>
+            <div class="personnel-container">
+                <div class="row">
+                    <!-- Officer Cards -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="personnel-card officer pilot">
+                            <img src="img/General Marcus Hawthorne.jpeg" alt="General Hawthorne" class="personnel-img">
+                            <div class="personnel-info">
+                                <div class="personnel-name">General Marcus Hawthorne</div>
+                                <div class="personnel-rank">O-10 | General</div>
+                                <span class="personnel-specialty">Command Pilot</span>
+                                <div class="personnel-unit">Air Combat Command</div>
+                                <div class="personnel-years">Service: 32 years</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="personnel-card officer pilot">
+                            <img src="img/Colonel Sarah Mitchell.webp" alt="Colonel Mitchell" class="personnel-img">
+                            <div class="personnel-info">
+                                <div class="personnel-name">Colonel Sarah Mitchell</div>
+                                <div class="personnel-rank">O-6 | Colonel</div>
+                                <span class="personnel-specialty">Fighter Pilot</span>
+                                <div class="personnel-unit">388th Fighter Wing</div>
+                                <div class="personnel-years">Service: 18 years</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="personnel-card officer intel">
+                            <img src="img/Major David Chen.jpeg" alt="Major Chen" class="personnel-img">
+                            <div class="personnel-info">
+                                <div class="personnel-name">Major David Chen</div>
+                                <div class="personnel-rank">O-4 | Major</div>
+                                <span class="personnel-specialty">Intelligence Officer</span>
+                                <div class="personnel-unit">Air Force ISR Agency</div>
+                                <div class="personnel-years">Service: 12 years</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- NCO Cards -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="personnel-card nco support">
+                            <img src="img/CMSgt Maria Rodriguez.webp" alt="Chief Rodriguez" class="personnel-img">
+                            <div class="personnel-info">
+                                <div class="personnel-name">CMSgt Maria Rodriguez</div>
+                                <div class="personnel-rank">E-9 | Chief Master Sergeant</div>
+                                <span class="personnel-specialty">First Sergeant</span>
+                                <div class="personnel-unit">60th Air Mobility Wing</div>
+                                <div class="personnel-years">Service: 26 years</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="personnel-card nco maintenance">
+                            <img src="img/SMSgt James Williams.webp" alt="SMSgt Williams" class="personnel-img">
+                            <div class="personnel-info">
+                                <div class="personnel-name">SMSgt James Williams</div>
+                                <div class="personnel-rank">E-8 | Senior Master Sergeant</div>
+                                <span class="personnel-specialty">Aircraft Maintenance</span>
+                                <div class="personnel-unit">355th Fighter Squadron</div>
+                                <div class="personnel-years">Service: 22 years</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enlisted Cards -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="personnel-card enlisted support">
+                            <img src="img/SSgt Jessica Johnson2.jpeg" alt="SSgt Johnson" class="personnel-img">
+                            <div class="personnel-info">
+                                <div class="personnel-name">SSgt Jessica Johnson</div>
+                                <div class="personnel-rank">E-5 | Staff Sergeant</div>
+                                <span class="personnel-specialty">Air Traffic Control</span>
+                                <div class="personnel-unit">621st Contingency Response Wing</div>
+                                <div class="personnel-years">Service: 6 years</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+           <div class="container">
+             <!-- Header Section -->
+        <header class="portal-header">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1><i class="fas fa-briefcase me-2"></i>Recruitment & Career Portal</h1>
+                    <p>Join our team and build your future with us. Complete the multi-step application to get started.</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <span class="badge bg-warning text-dark p-2"><i class="fas fa-user-clock me-1"></i> Average completion time: 10 min</span>
+                </div>
+            </div>
+        </header>
+           <nav class="enlister">
+            <div class="col-lg-3">
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Personal Info</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Qualifications</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Career Preferences</div>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Review & Submit</div>
+                    </div>
+               </div>
+               <!-- Features -->
+                <div class="d-none d-lg-block">
+                    <h5 class="mb-3">Why apply with us?</h5>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h6>Secure Application</h6>
+                                <p class="small mb-0">Your data is protected with encryption and secure storage.</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <h6>Save & Resume</h6>
+                                <p class="small mb-0">You can save your progress and resume anytime.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <!-- Application Form -->
+            <div class="col-lg-9">
+                <div class="application-container">
+                    <!-- Step 1: Personal Information -->
+                    <form id="applicationForm" class="form-step active" data-step="1">
+                        <div class="form-header">
+                            <h3><i class="fas fa-user me-2"></i>Personal Information</h3>
+                            <p class="text-muted mb-0">Please provide your personal details</p>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                                <div class="validation-error">Please enter your first name</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                                <div class="validation-error">Please enter your last name</div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <div class="validation-error">Please enter a valid email address</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                                <div class="validation-error">Please enter a valid phone number</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address *</label>
+                            <input type="text" class="form-control" id="address" required>
+                            <div class="validation-error">Please enter your address</div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="city" class="form-label">City *</label>
+                                <input type="text" class="form-control" id="city" required>
+                                <div class="validation-error">Please enter your city</div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="state" class="form-label">State *</label>
+                                <select class="form-select" id="state" required>
+                                    <option value="">Select...</option>
+                                    <option value="CA">California</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="NY">New York</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="IL">Illinois</option>
+                                </select>
+                                <div class="validation-error">Please select your state</div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="zip" class="form-label">ZIP Code *</label>
+                                <input type="text" class="form-control" id="zip" required>
+                                <div class="validation-error">Please enter a valid ZIP code</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <div></div>
+                            <button type="button" class="formbtn btn-primary next-step" data-next="2">Next: Qualifications <i class="fas fa-arrow-right ms-1"></i></button>
+                        </div>
+                    </form>
+                    
+                    <!-- Step 2: Qualifications -->
+                    <form class="form-step" data-step="2">
+                        <div class="form-header">
+                            <h3><i class="fas fa-graduation-cap me-2"></i>Qualifications</h3>
+                            <p class="text-muted mb-0">Tell us about your education and experience</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="education" class="form-label">Highest Education Level *</label>
+                            <select class="form-select" id="education" required>
+                                <option value="">Select your education level</option>
+                                <option value="high-school">High School Diploma</option>
+                                <option value="associate">Associate Degree</option>
+                                <option value="bachelor">Bachelor's Degree</option>
+                                <option value="master">Master's Degree</option>
+                                <option value="phd">PhD or Higher</option>
+                            </select>
+                            <div class="validation-error">Please select your education level</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="field" class="form-label">Field of Study *</label>
+                            <input type="text" class="form-control" id="field" required>
+                            <div class="validation-error">Please enter your field of study</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="experience" class="form-label">Years of Experience *</label>
+                            <select class="form-select" id="experience" required>
+                                <option value="">Select your experience level</option>
+                                <option value="0-1">0-1 years</option>
+                                <option value="1-3">1-3 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="5-10">5-10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+                            <div class="validation-error">Please select your years of experience</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="skills" class="form-label">Key Skills *</label>
+                            <textarea class="form-control" id="skills" rows="3" required placeholder="List your key skills separated by commas"></textarea>
+                            <div class="validation-error">Please enter your key skills</div>
+                            <div class="form-text">Example: Project Management, JavaScript, UI/UX Design, Data Analysis</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="resume" class="form-label">Upload Resume (Optional)</label>
+                            <input type="file" class="form-control" id="resume" accept=".pdf,.doc,.docx">
+                            <div class="form-text">Accepted formats: PDF, DOC, DOCX (Max size: 5MB)</div>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <button type="button" class="formbtn btn-outline-secondary prev-step" data-prev="1"><i class="fas fa-arrow-left me-1"></i> Back</button>
+                            <button type="button" class="formbtn btn-primary next-step" data-next="3">Next: Career Preferences <i class="fas fa-arrow-right ms-1"></i></button>
+                        </div>
+                    </form>
+                    
+                    <!-- Step 3: Career Preferences -->
+                    <form class="form-step" data-step="3">
+                        <div class="form-header">
+                            <h3><i class="fas fa-bullseye me-2"></i>Career Preferences</h3>
+                            <p class="text-muted mb-0">Tell us about your career goals and preferences</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="position" class="form-label">Desired Position *</label>
+                            <select class="form-select" id="position" required>
+                                <option value="">Select a position</option>
+                                <option value="frontend">Frontend Developer</option>
+                                <option value="backend">Backend Developer</option>
+                                <option value="fullstack">Full Stack Developer</option>
+                                <option value="designer">UI/UX Designer</option>
+                                <option value="manager">Project Manager</option>
+                                <option value="analyst">Data Analyst</option>
+                            </select>
+                            <div class="validation-error">Please select your desired position</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="employmentType" class="form-label">Employment Type *</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="employmentType" id="fullTime" value="full-time" required>
+                                    <label class="form-check-label" for="fullTime">Full Time</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="employmentType" id="partTime" value="part-time">
+                                    <label class="form-check-label" for="partTime">Part Time</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="employmentType" id="contract" value="contract">
+                                    <label class="form-check-label" for="contract">Contract</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="employmentType" id="remote" value="remote">
+                                    <label class="form-check-label" for="remote">Remote</label>
+                                </div>
+                            </div>
+                            <div class="validation-error">Please select an employment type</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="salary" class="form-label">Expected Salary Range (per year) *</label>
+                            <select class="form-select" id="salary" required>
+                                <option value="">Select a range</option>
+                                <option value="30-50">$30,000 - $50,000</option>
+                                <option value="50-70">$50,000 - $70,000</option>
+                                <option value="70-90">$70,000 - $90,000</option>
+                                <option value="90-120">$90,000 - $120,000</option>
+                                <option value="120+">$120,000+</option>
+                            </select>
+                            <div class="validation-error">Please select your expected salary range</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="availability" class="form-label">When can you start? *</label>
+                            <select class="form-select" id="availability" required>
+                                <option value="">Select availability</option>
+                                <option value="immediately">Immediately</option>
+                                <option value="2-weeks">Within 2 weeks</option>
+                                <option value="1-month">Within 1 month</option>
+                                <option value="2-months">Within 2 months</option>
+                                <option value="3+ months">3+ months</option>
+                            </select>
+                            <div class="validation-error">Please select your availability</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="additionalInfo" class="form-label">Additional Information</label>
+                            <textarea class="form-control" id="additionalInfo" rows="3" placeholder="Any additional information you'd like to share..."></textarea>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <button type="button" class="formbtn btn-outline-secondary prev-step" data-prev="2"><i class="fas fa-arrow-left me-1"></i> Back</button>
+                            <button type="button" class="formbtn btn-primary next-step" data-next="4">Review & Submit <i class="fas fa-arrow-right ms-1"></i></button>
+                        </div>
+                    </form>
+                    
+                    <!-- Step 4: Review & Submit -->
+                    <div class="form-step" data-step="4">
+                        <div class="form-header">
+                            <h3><i class="fas fa-clipboard-check me-2"></i>Review & Submit</h3>
+                            <p class="text-muted mb-0">Please review your information before submitting</p>
+                        </div>
+                        
+                        <h5 class="mb-3">Personal Information</h5>
+                        <div class="row mb-4">
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Full Name</div>
+                                <div class="review-value" id="review-name">Not provided</div>
+                            </div>
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Email</div>
+                                <div class="review-value" id="review-email">Not provided</div>
+                            </div>
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Phone</div>
+                                <div class="review-value" id="review-phone">Not provided</div>
+                            </div>
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Location</div>
+                                <div class="review-value" id="review-location">Not provided</div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mb-3">Qualifications</h5>
+                        <div class="row mb-4">
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Education Level</div>
+                                <div class="review-value" id="review-education">Not provided</div>
+                            </div>
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Field of Study</div>
+                                <div class="review-value" id="review-field">Not provided</div>
+                            </div>
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Years of Experience</div>
+                                <div class="review-value" id="review-experience">Not provided</div>
+                            </div>
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Key Skills</div>
+                                <div class="review-value" id="review-skills">Not provided</div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mb-3">Career Preferences</h5>
+                        <div class="row mb-4">
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Desired Position</div>
+                                <div class="review-value" id="review-position">Not provided</div>
+                            </div>
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Employment Type</div>
+                                <div class="review-value" id="review-employment">Not provided</div>
+                            </div>
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Expected Salary</div>
+                                <div class="review-value" id="review-salary">Not provided</div>
+                            </div>
+                            <div class="col-md-6 review-item">
+                                <div class="review-label">Availability</div>
+                                <div class="review-value" id="review-availability">Not provided</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                            <label class="form-check-label" for="agreeTerms">
+                                I confirm that all the information provided is accurate and complete to the best of my knowledge.
+                            </label>
+                            <div class="validation-error" id="terms-error">You must agree to the terms before submitting</div>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <button type="button" class="formbtn btn-outline-secondary prev-step" data-prev="3"><i class="fas fa-arrow-left me-1"></i> Back</button>
+                            <button type="button" class="formbtn btn-success" id="submit-application">Submit Application <i class="fas fa-paper-plane ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+        </div>
+    </div>
+
+    <!-- Advanced Footer -->
+ <footer class="advanced-footer">
+     <div class="container">
+         <div class="row">
+             <!-- Sitemap -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Sitemap</h4>
+                 <ul class="footer-links">
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Home</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> About Us</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Command Structure</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Core Values</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Aircraft Fleets</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Missions</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> Careers</a></li>
+                     <li><a href="#"><i class="bi bi-chevron-right me-2"></i> News & Gallery</a></li>
+                 </ul>
+             </div>
+
+             <!-- Emergency Contact -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Emergency Contact</h4>
+                 <div class="emergency-contact">
+                     <p class="mb-2"><strong>24/7 Operations Center</strong></p>
+                     <div class="contact-number">1-800-GOTHAM-AF</div>
+                     <p class="small mb-2">For immediate military assistance</p>
+                     <p class="small mb-0">Secure Line: ***-***-****</p>
+                 </div>
+                 <div class="emergency-contact mt-3">
+                     <p class="mb-2"><strong>Family Support</strong></p>
+                     <div class="contact-number">1-888-GAF-FMLY</div>
+                     <p class="small mb-0">Support services for families</p>
+                 </div>
+             </div>
+
+             <!-- Legal & Privacy -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Legal & Privacy</h4>
+                 <ul class="footer-links">
+                     <li><a href="#"><i class="bi bi-shield-check me-2"></i> Privacy Policy</a></li>
+                     <li><a href="#"><i class="bi bi-file-text me-2"></i> Terms of Service</a></li>
+                     <li><a href="#"><i class="bi bi-lock me-2"></i> Security Protocols</a></li>
+                     <li><a href="#"><i class="bi bi-eye me-2"></i> Accessibility</a></li>
+                     <li><a href="#"><i class="bi bi-flag me-2"></i> FOIA Requests</a></li>
+                     <li><a href="#"><i class="bi bi-briefcase me-2"></i> Procurement</a></li>
+                 </ul>
+             </div>
+
+             <!-- Social Media -->
+             <div class="col-lg-3 col-md-6 footer-section">
+                 <h4 class="footer-title">Connect With Us</h4>
+                 <p class="mb-3">Follow Gotham Airforce for updates, news, and insights into our operations.</p>
+                 
+                 <div class="social-icons">
+                     <a href="#" class="social-icon" title="Twitter">
+                         <i class="bi bi-twitter"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="Facebook">
+                         <i class="bi bi-facebook"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="Instagram">
+                         <i class="bi bi-instagram"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="YouTube">
+                         <i class="bi bi-youtube"></i>
+                     </a>
+                     <a href="#" class="social-icon" title="LinkedIn">
+                         <i class="bi bi-linkedin"></i>
+                     </a>
+                 </div>
+
+                 <div class="mt-4">
+                     <p class="mb-2"><strong>Official Channels Only</strong></p>
+                     <p class="small">Verify official accounts through our verification portal</p>
+                     <a href="#" class="verify btn btn-outline-warning btn-sm">Verify Accounts</a>
+                 </div>
+             </div>
+         </div>
+ 
+         <!-- Copyright -->
+         <div class="copyright">
+             <div class="container">
+                 <div class="row align-items-center">
+                     <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+                         <p class="mb-0">&copy; 2024 Gotham Airforce. All rights reserved. | Official Government Website</p>
+                     </div>
+                     <div class="col-md-6 text-md-end text-center">
+                         <p class="mb-0">
+                             <a href="#" class="text-white text-decoration-none me-3">Site Map</a>
+                             <a href="#" class="text-white text-decoration-none me-3">Contact Webmaster</a>
+                             <a href="#" class="text-white text-decoration-none">Report Issue</a>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="personnel.js"></script>
+</body>
+</html>
