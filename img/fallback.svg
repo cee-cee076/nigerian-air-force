@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="42%" r="70%"><stop offset="0" stop-color="#123a7a"/><stop offset="1" stop-color="#06142b"/></radialGradient>
+    <pattern id="p" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#5cc8ff" stroke-opacity=".08"/></pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <rect width="800" height="500" fill="url(#p)"/>
+  <g transform="translate(400 240)" fill="none" stroke="#96d7ff" stroke-opacity=".75" stroke-width="2" stroke-linejoin="round">
+    <path d="M0-110l9 44 4 40 70 46v16L13 17l-3 40 24 18v12L0 78l-34 9V75l24-18-3-40-70 19V20l70-46 4-40z" fill="#5cc8ff" fill-opacity=".06"/>
+  </g>
+  <g transform="translate(40 460)" font-family="monospace" font-size="13" fill="#96d7ff" fill-opacity=".7" letter-spacing="3"><text>NIGERIAN AIR FORCE · IMAGE PENDING</text></g>
+  <g transform="translate(724 40)"><circle r="16" fill="#008751"/><circle r="10" fill="#fff"/><circle r="5" fill="#008751"/></g>
+</svg>

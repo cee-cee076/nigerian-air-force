@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Command &amp; Leadership — Nigerian Air Force</title>
+  <meta name="description" content="Chief of the Air Staff, branch chiefs and Air Officers Commanding of the Nigerian Air Force.">
+  <meta name="theme-color" content="#040a14">
+  <link rel="icon" href="img/emblem.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="leadership">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero" style="min-height:clamp(420px,58vh,600px)">
+      <div class="hero-media" data-parallax="0.25"><img src="img/naf/cas-meeting.jpg" alt=""></div>
+      <div class="hud-corners"><span></span></div>
+      <div class="container-xl">
+        <nav class="breadcrumb-gaf" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>About</span><span class="sep">/</span><span>Leadership</span></nav>
+        <span class="eyebrow green"><span class="fin-flash" aria-hidden="true"></span> Headquarters NAF · Abuja</span>
+        <h1 class="display-xl" data-split>Command &amp; Leadership</h1>
+        <p class="lead-lg" data-reveal="up" data-delay="0.3">The officers who command the Nigerian Air Force, its branches and its operational commands.</p>
+      </div>
+    </section>
+
+    <!-- CAS -->
+    <section class="section">
+      <div class="container-xl">
+        <div class="cas-card" data-reveal="up">
+          <div class="cas-plate">
+            <img class="cas-photo" src="img/naf/cas-aneke-aacs.jpg" alt="Air Marshal Sunday Kelvin Aneke, Chief of the Air Staff, at the 2026 African Air Chiefs Symposium in Tunis">
+            <span class="insignia" id="casInsignia"></span>
+            <div class="rank-name">Air Marshal</div>
+          </div>
+          <div class="cas-body">
+            <span class="eyebrow">Chief of the Air Staff</span>
+            <h2>Air Marshal Sunday Kelvin Aneke</h2>
+            <div class="appt">23rd Chief of the Air Staff · since 30 October 2025</div>
+            <p>Air Marshal Aneke is a career NAF officer. He was admitted to the Nigerian Defence Academy in 1988 as a member of the 40th Regular Course and commissioned in 1993. He holds a BSc in Physics and postgraduate qualifications in management, international affairs and diplomacy, and political economy and development studies.</p>
+            <p>Before his appointment he was Air Officer Commanding, NAF Mobility Command, in Yenagoa. Earlier, he was Director of Safety and Director of Policy at HQ NAF and Deputy Commandant of the Nigerian Defence Academy. He also served with the UN mission in the DR Congo and flew ISR in the Niger Delta during Operation Restore Hope.</p>
+            <div class="fact-grid">
+              <div><small>Born</small><strong>1972 · Makurdi, Benue</strong></div>
+              <div><small>Commissioned</small><strong>1993 · NDA 40 RC</strong></div>
+              <div><small>Predecessor</small><strong>AM Hasan Abubakar</strong></div>
+            </div>
+            <p class="small mt-3 mb-0" style="color:var(--dim)">Photo: 2026 African Air Chiefs Symposium, Tunis. U.S. Air Force photo by 2nd Lt. Eve Daugherty (public domain).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Org chart -->
+    <section class="section section-alt grid-bg">
+      <div class="container-xl">
+        <div class="section-head center">
+          <span class="eyebrow center">Structure</span>
+          <h2 class="display-lg" data-split>Chain of command</h2>
+        </div>
+        <div class="org-chart" data-stagger="0.12" data-stagger-type="scale">
+          <div class="org-level"><div class="org-node top"><small>Air Marshal</small><strong>Chief of the Air Staff</strong></div></div>
+          <div class="org-level"><div class="org-node"><small>HQ NAF</small><strong>Branch Chiefs</strong></div><div class="org-node"><small>HQ NAF</small><strong>Directorates</strong></div><div class="org-node"><small>Corps</small><strong>Nigerian Air Defence Corps</strong></div></div>
+          <div class="org-level"><div class="org-node"><small>Makurdi</small><strong>Tactical Air Cmd</strong></div><div class="org-node"><small>Kaduna</small><strong>Air Training Cmd</strong></div><div class="org-node"><small>Enugu</small><strong>Ground Training Cmd</strong></div><div class="org-node"><small>Lagos</small><strong>Logistics Cmd</strong></div><div class="org-node"><small>Yenagoa</small><strong>Mobility Cmd</strong></div><div class="org-node"><small>Bauchi</small><strong>Special Ops Cmd</strong></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Branch chiefs & AOCs -->
+    <section class="section">
+      <div class="container-xl">
+        <div class="section-head split">
+          <div><span class="eyebrow">Principal Staff Officers</span><h2 class="display-lg mb-0" data-split>Branch chiefs &amp; commanders</h2></div>
+          <div class="filter-bar" id="leadTabs" data-reveal="up">
+            <button class="chip active" data-t="aoc">Air Officers Commanding</button>
+            <button class="chip" data-t="branch">Branch chiefs</button>
+            <button class="chip" data-t="inst">Institutions</button>
+          </div>
+        </div>
+        <div class="row g-3" id="leaders"></div>
+        <p class="small mt-4" style="color:var(--dim)">Appointments as announced in the redeployment approved by the CAS on 7 November 2026. Names are given as published, with initials. Appointments change regularly; check <a href="https://airforce.mil.ng" target="_blank" rel="noopener" style="color:var(--gold)">airforce.mil.ng</a> for the current list.</p>
+      </div>
+    </section>
+
+    <!-- Past CAS -->
+    <section class="section section-alt">
+      <div class="container-xl">
+        <div class="section-head">
+          <span class="eyebrow">Roll of Honour</span>
+          <h2 class="display-lg mb-0" data-split>Chiefs of the Air Staff</h2>
+        </div>
+        <ol class="cas-list" id="casList" data-reveal="up"></ol>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/layout.js"></script>
+  <script src="js/ranks.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      document.getElementById("casInsignia").outerHTML = window.NAF_insignia("w2");
+      const AVM = { r: "Air Vice Marshal", ins: "w1" };
+      const people = {
+        aoc: [
+          ["NI Ilo", "AOC, Tactical Air Command"], ["BR Mamman", "AOC, Mobility Command"], ["OS Ogunsina", "AOC, Logistics Command"],
+          ["MN Onyebashi", "AOC, Special Operations Command"], ["FCS Nwakara", "AOC, Ground Training Command"], ["JI Ukeh", "Commander, Nigerian Air Defence Corps"],
+          ["GI Jibia", "Deputy Force Commander, Operation Hadin Kai"]
+        ],
+        branch: [
+          ["NN Ananaba", "Chief of Operations"], ["PN Amadi", "Chief of Air Intelligence"], ["EE Efiom", "Chief of Training"],
+          ["MA Sulaiman", "Chief of Communications & Information Systems"], ["AK Ademuwagun", "Chief of Transformation & Innovation"], ["AJ Laoye", "Chief of Aircraft Engineering"],
+          ["AG Kehinde", "Chief of Civil-Military Relations"], ["IV Ajiboye", "Superintendent of Standards & Evaluation"], ["AH Bakari", "Air Provost Marshal"]
+        ],
+        inst: [
+          ["PB Philips", "Commandant, Armed Forces Command & Staff College"], ["AO Akinbunwa", "Commandant, Air Force War College"], ["A Idris", "Commandant, Air Warfare Doctrine Centre"],
+          ["OC Ubadike", "Commandant, Air Force Institute of Technology"], ["AI Sambo", "Commandant, NAF College of Logistics & Management"], ["JA Ekwuribe", "Commandant, Regiment Training Centre"],
+          ["M Yusuf", "Deputy Commandant, Nigerian Defence Academy"]
+        ]
+      };
+      const wrap = document.getElementById("leaders");
+      const render = (k) => {
+        wrap.innerHTML = people[k].map(([n, a], i) => `
+          <div class="col-md-6 col-lg-4" data-reveal="up" style="--d:${(i % 3) * 0.06}s">
+            <div class="card-gaf leader-card" data-tilt="5">
+              ${window.NAF_insignia(AVM.ins)}
+              <div class="who"><span class="rk">${AVM.r}</span><strong>AVM ${n}</strong><span class="appt">${a}</span></div>
+            </div>
+          </div>`).join("");
+        wrap.querySelectorAll("[data-reveal]").forEach((el) => window.NAF_observe(el));
+        window.NAF_tilt(wrap);
+      };
+      document.getElementById("leadTabs").addEventListener("click", (e) => {
+        const b = e.target.closest(".chip"); if (!b) return;
+        document.querySelectorAll("#leadTabs .chip").forEach((c) => c.classList.toggle("active", c === b));
+        render(b.dataset.t);
+      });
+      render("aoc");
+
+      const cas = [
+        ["Col. Gerhard Kahtz", "1963–1965"], ["Col. Wolfgang Thimmig", "1965–1966"], ["Lt Col. George T. Kurubo", "1966–1967"], ["Col. Shittu Alao", "1967–1969"],
+        ["Brig. Emmanuel E. Ikwue", "1969–1975"], ["AVM John N. Yisa-Doko", "1975–1980"], ["AVM Abdullahi D. Bello", "1980–1983"], ["AM Ibrahim M. Alfa", "1984–1990"],
+        ["AVM Nuraini O. Yussuff", "1990–1992"], ["AM Akin Dada", "1992"], ["AVM Femi John Femi", "1992–1996"], ["AM Nsikak-Abasi E. Eduok", "1996–1999"],
+        ["AM Isaac M. Alfa", "1999–2001"], ["AM Jonah D. Wuyep", "2001–2006"], ["AM Paul Dike", "2006–2008"], ["AM Oluseyi Petinrin", "2008–2010"],
+        ["AM Mohammed D. Umar", "2010–2012"], ["AM Alex S. Badeh", "2012–2014"], ["AM Adesola N. Amosu", "2014–2015"], ["AM Sadique Abubakar", "2015–2021"],
+        ["AM Isiaka O. Amao", "2021–2023"], ["AM Hasan Abubakar", "2023–2025"], ["AM Sunday K. Aneke", "2025–present"]
+      ];
+      document.getElementById("casList").innerHTML = cas.map(([n, y], i) => `<li class="${i === cas.length - 1 ? "current" : ""}"><span>${n}</span><small>${y}</small></li>`).join("");
+    })();
+  </script>
+</body>
+</html>

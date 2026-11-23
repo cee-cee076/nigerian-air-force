@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact &amp; Media — Nigerian Air Force</title>
+  <meta name="description" content="Contact channels and media inquiries for the Nigerian Air Force (concept site).">
+  <meta name="theme-color" content="#040a14">
+  <link rel="icon" href="img/emblem.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero" style="min-height:clamp(400px,54vh,560px)">
+      <div class="hero-media" data-parallax="0.25"><img src="img/naf/kainji-base.jpg" alt=""></div>
+      <div class="hud-corners"><span></span></div>
+      <div class="container-xl">
+        <nav class="breadcrumb-gaf" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Contact</span></nav>
+        <span class="eyebrow green"><span class="fin-flash" aria-hidden="true"></span> Get in touch</span>
+        <h1 class="display-xl" data-split>Contact &amp; Media</h1>
+        <p class="lead-lg" data-reveal="up" data-delay="0.3">General inquiries, media requests and community engagement with the Nigerian Air Force.</p>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container-xl">
+        <div class="row g-4" data-stagger="0.08">
+          <div class="col-md-6 col-lg-3"><div class="card-gaf contact-tile" data-tilt="6"><div class="icon-box"><i class="bi bi-building"></i></div><span class="eyebrow mb-2">Headquarters</span><span class="value">HQ NAF, Abuja</span><p class="mb-0 small">Headquarters Nigerian Air Force, Airport Road, Abuja, FCT.</p></div></div>
+          <div class="col-md-6 col-lg-3"><div class="card-gaf contact-tile" data-tilt="6"><div class="icon-box"><i class="bi bi-megaphone"></i></div><span class="eyebrow mb-2">Media</span><span class="value">DOPRI</span><p class="mb-0 small">Directorate of Public Relations and Information. Director: Air Commodore Ehimen Ejodame.</p></div></div>
+          <div class="col-md-6 col-lg-3"><div class="card-gaf contact-tile" data-tilt="6"><div class="icon-box"><i class="bi bi-globe2"></i></div><span class="eyebrow mb-2">Official site</span><a class="value" href="https://airforce.mil.ng" target="_blank" rel="noopener">airforce.mil.ng</a><p class="mb-0 small">Official releases, recruitment and verified contact numbers.</p></div></div>
+          <div class="col-md-6 col-lg-3"><div class="card-gaf contact-tile" data-tilt="6"><div class="icon-box"><i class="bi bi-shield-exclamation"></i></div><span class="eyebrow mb-2">Report fraud</span><span class="value">Free recruitment</span><p class="mb-0 small">Report anyone asking for money for recruitment to the nearest NAF unit or the police.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="media">
+      <div class="container-xl">
+        <div class="row gy-5">
+          <div class="col-lg-5">
+            <span class="eyebrow">Inquiries</span>
+            <h2 class="display-lg" data-split>Send a message</h2>
+            <p class="lead-lg" data-reveal="up">Pick the type of inquiry so it reaches the right desk.</p>
+            <ul class="check-list mt-4" data-stagger="0.08">
+              <li><i class="bi bi-camera-reels"></i><div><strong>Media &amp; press</strong>Interviews, accreditation, imagery and event coverage.</div></li>
+              <li><i class="bi bi-people"></i><div><strong>Community relations</strong>Outreach, school visits and civil-military cooperation.</div></li>
+              <li><i class="bi bi-chat-square-text"></i><div><strong>General</strong>Any other questions for the Nigerian Air Force.</div></li>
+            </ul>
+          </div>
+          <div class="col-lg-7">
+            <form class="form-panel" id="contactForm" novalidate data-reveal="up">
+              <div class="seg" role="group" aria-label="Inquiry type">
+                <button type="button" class="active" data-type="Media">Media</button>
+                <button type="button" data-type="Community">Community</button>
+                <button type="button" data-type="General">General</button>
+              </div>
+              <div class="row">
+                <div class="col-md-6"><div class="field"><label for="cName">Full name <span class="req">*</span></label><input class="input-gaf" id="cName" name="name" autocomplete="name" required><div class="error-msg">Please enter your name.</div></div></div>
+                <div class="col-md-6"><div class="field"><label for="cEmail">Email <span class="req">*</span></label><input class="input-gaf" id="cEmail" name="email" type="email" autocomplete="email" required><div class="error-msg">Please enter a valid email.</div></div></div>
+                <div class="col-md-6"><div class="field"><label for="cOrg">Organisation</label><input class="input-gaf" id="cOrg" name="org" autocomplete="organization" placeholder="Media house, school, agency…"></div></div>
+                <div class="col-md-6"><div class="field"><label for="cSubject">Subject <span class="req">*</span></label><input class="input-gaf" id="cSubject" name="subject" required><div class="error-msg">Please add a subject.</div></div></div>
+                <div class="col-12"><div class="field"><label for="cMsg">Message <span class="req">*</span></label><textarea class="input-gaf" id="cMsg" name="message" required minlength="10"></textarea><div class="error-msg">Please write at least 10 characters.</div></div></div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <span class="small" style="color:var(--dim)">Demo form. Nothing is sent from this concept site.</span>
+                <button type="submit" class="btn-gaf" data-magnetic>Send message <i class="bi bi-send"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container-xl">
+        <div class="row gy-4">
+          <div class="col-lg-4"><span class="eyebrow">FAQ</span><h2 class="display-md" data-split>Before you write</h2></div>
+          <div class="col-lg-8 faq" data-reveal="up">
+            <details><summary>How do I request an interview with a senior officer? <i class="bi bi-plus-lg"></i></summary><p>Send a media inquiry with your organisation, the topic and your deadline. The Directorate of Public Relations and Information handles all interview requests.</p></details>
+            <details><summary>Can schools arrange a visit to an air base? <i class="bi bi-plus-lg"></i></summary><p>Educational visits are arranged through community relations, subject to security and operational requirements.</p></details>
+            <details><summary>How do I verify official NAF social media accounts? <i class="bi bi-plus-lg"></i></summary><p>Use only the links published on airforce.mil.ng. Impersonation accounts are common, especially during recruitment.</p></details>
+            <details><summary>Where can I get NAF photos for publication? <i class="bi bi-plus-lg"></i></summary><p>Request official imagery from the media desk. The photos in this site's <a href="gallery.html" style="color:var(--gold)">gallery</a> are freely licensed images from Wikimedia Commons.</p></details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById("contactForm");
+      let type = "Media";
+      form.querySelector(".seg").addEventListener("click", (e) => {
+        const b = e.target.closest("button"); if (!b) return;
+        type = b.dataset.type;
+        form.querySelectorAll(".seg button").forEach((x) => x.classList.toggle("active", x === b));
+      });
+      form.addEventListener("input", (e) => { const f = e.target.closest(".field"); if (f) f.classList.remove("invalid"); });
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let ok = true;
+        form.querySelectorAll("[required]").forEach((el) => {
+          const good = el.checkValidity() && el.value.trim().length >= (el.minLength > 0 ? el.minLength : 1);
+          el.closest(".field").classList.toggle("invalid", !good);
+          if (!good && ok) { el.focus(); ok = false; }
+        });
+        if (!ok) return;
+        form.reset();
+        window.NAF_toast(`${type} inquiry validated. This demo form doesn't send messages.`);
+      });
+    })();
+  </script>
+</body>
+</html>
